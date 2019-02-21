@@ -10,6 +10,7 @@
 		6D16565167798429FCB50DA8 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1655713D889876A3EE2ADA /* AuthenticationService.swift */; };
 		6D165AE6C091100D529C9303 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1657BB7A74175A34912EF8 /* Coordinator.swift */; };
 		6D165F4476F814F5095CC167 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D165F467D54B37E3DB41D44 /* MainCoordinator.swift */; };
+		6F2AF1B4221EDE0700E37101 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F2AF1B3221EDE0700E37101 /* Mapbox.framework */; };
 		DA194A5E221EBF9400E9301F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA194A5D221EBF9400E9301F /* AppDelegate.swift */; };
 		DA194A65221EBF9600E9301F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA194A64221EBF9600E9301F /* Assets.xcassets */; };
 		DA194A68221EBF9600E9301F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA194A66221EBF9600E9301F /* LaunchScreen.storyboard */; };
@@ -44,6 +45,7 @@
 		6D1655713D889876A3EE2ADA /* AuthenticationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		6D1657BB7A74175A34912EF8 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		6D165F467D54B37E3DB41D44 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		6F2AF1B3221EDE0700E37101 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = Carthage/Build/iOS/Mapbox.framework; sourceTree = "<group>"; };
 		DA194A5A221EBF9400E9301F /* npower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = npower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA194A5D221EBF9400E9301F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA194A64221EBF9600E9301F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F2AF1B4221EDE0700E37101 /* Mapbox.framework in Frameworks */,
 				DA7A5E19221ED9EB00EF37CD /* RxCocoa.framework in Frameworks */,
 				DA7A5E17221ED9E900EF37CD /* RxSwift.framework in Frameworks */,
 			);
@@ -190,6 +193,7 @@
 		DA7A5E15221ED9E800EF37CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6F2AF1B3221EDE0700E37101 /* Mapbox.framework */,
 				DA7A5E18221ED9EB00EF37CD /* RxCocoa.framework */,
 				DA7A5E16221ED9E900EF37CD /* RxSwift.framework */,
 			);
@@ -335,6 +339,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Mapbox.framework",
 			);
 			outputFileListPaths = (
 			);

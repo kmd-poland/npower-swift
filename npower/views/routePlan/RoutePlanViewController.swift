@@ -7,16 +7,28 @@
 //
 
 import UIKit
+import Mapbox
 
-class RoutePlanViewController: UIViewController {
+class RoutePlanMapView: MGLMapView {}
 
+class RoutePlanViewController: UIViewController, MGLMapViewDelegate {
+
+    @IBOutlet weak var mapView: RoutePlanMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        mapView.styleURL = MGLStyle.satelliteStyleURL
+        mapView.delegate = self
+        mapView.showsUserLocation = true
         // Do any additional setup after loading the view.
     }
 
-
+    
+    func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
+        // Always allow callouts to popup when annotations are tapped.
+        return true
+    }
     /*
     // MARK: - Navigation
 
