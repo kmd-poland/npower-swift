@@ -19,6 +19,8 @@
 		DA7A5E0F221ED19F00EF37CD /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA7A5E0D221ED19F00EF37CD /* LoginViewController.xib */; };
 		DA7A5E13221ED2A900EF37CD /* RoutePlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7A5E11221ED2A900EF37CD /* RoutePlanViewController.swift */; };
 		DA7A5E14221ED2A900EF37CD /* RoutePlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA7A5E12221ED2A900EF37CD /* RoutePlanViewController.xib */; };
+		DA7A5E17221ED9E900EF37CD /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7A5E16221ED9E900EF37CD /* RxSwift.framework */; };
+		DA7A5E19221ED9EB00EF37CD /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7A5E18221ED9EB00EF37CD /* RxCocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		DA7A5E0D221ED19F00EF37CD /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		DA7A5E11221ED2A900EF37CD /* RoutePlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePlanViewController.swift; sourceTree = "<group>"; };
 		DA7A5E12221ED2A900EF37CD /* RoutePlanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoutePlanViewController.xib; sourceTree = "<group>"; };
+		DA7A5E16221ED9E900EF37CD /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		DA7A5E18221ED9EB00EF37CD /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA7A5E19221ED9EB00EF37CD /* RxCocoa.framework in Frameworks */,
+				DA7A5E17221ED9E900EF37CD /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +113,7 @@
 				DA194A71221EBF9600E9301F /* npowerTests */,
 				DA194A7C221EBF9600E9301F /* npowerUITests */,
 				DA194A5B221EBF9400E9301F /* Products */,
+				DA7A5E15221ED9E800EF37CD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,6 +187,15 @@
 			path = routePlan;
 			sourceTree = "<group>";
 		};
+		DA7A5E15221ED9E800EF37CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA7A5E18221ED9EB00EF37CD /* RxCocoa.framework */,
+				DA7A5E16221ED9E900EF37CD /* RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -190,6 +206,7 @@
 				DA194A56221EBF9400E9301F /* Sources */,
 				DA194A57221EBF9400E9301F /* Frameworks */,
 				DA194A58221EBF9400E9301F /* Resources */,
+				DA7A5E1A221ED9F200EF37CD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -306,6 +323,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DA7A5E1A221ED9F200EF37CD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DA194A56221EBF9400E9301F /* Sources */ = {
@@ -486,6 +525,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 873MGG72QS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = npower/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -504,6 +547,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 873MGG72QS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = npower/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
