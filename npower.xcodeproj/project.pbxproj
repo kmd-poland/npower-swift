@@ -1,0 +1,643 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6D16565167798429FCB50DA8 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1655713D889876A3EE2ADA /* AuthenticationService.swift */; };
+		6D165AE6C091100D529C9303 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1657BB7A74175A34912EF8 /* Coordinator.swift */; };
+		6D165F4476F814F5095CC167 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D165F467D54B37E3DB41D44 /* MainCoordinator.swift */; };
+		DA194A5E221EBF9400E9301F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA194A5D221EBF9400E9301F /* AppDelegate.swift */; };
+		DA194A65221EBF9600E9301F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA194A64221EBF9600E9301F /* Assets.xcassets */; };
+		DA194A68221EBF9600E9301F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA194A66221EBF9600E9301F /* LaunchScreen.storyboard */; };
+		DA194A73221EBF9600E9301F /* npowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA194A72221EBF9600E9301F /* npowerTests.swift */; };
+		DA194A7E221EBF9600E9301F /* npowerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA194A7D221EBF9600E9301F /* npowerUITests.swift */; };
+		DA7A5E0E221ED19F00EF37CD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7A5E0C221ED19F00EF37CD /* LoginViewController.swift */; };
+		DA7A5E0F221ED19F00EF37CD /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA7A5E0D221ED19F00EF37CD /* LoginViewController.xib */; };
+		DA7A5E13221ED2A900EF37CD /* RoutePlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7A5E11221ED2A900EF37CD /* RoutePlanViewController.swift */; };
+		DA7A5E14221ED2A900EF37CD /* RoutePlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA7A5E12221ED2A900EF37CD /* RoutePlanViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DA194A6F221EBF9600E9301F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA194A52221EBF9400E9301F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA194A59221EBF9400E9301F;
+			remoteInfo = npower;
+		};
+		DA194A7A221EBF9600E9301F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA194A52221EBF9400E9301F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA194A59221EBF9400E9301F;
+			remoteInfo = npower;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6D1655713D889876A3EE2ADA /* AuthenticationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		6D1657BB7A74175A34912EF8 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		6D165F467D54B37E3DB41D44 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		DA194A5A221EBF9400E9301F /* npower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = npower.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA194A5D221EBF9400E9301F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DA194A64221EBF9600E9301F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DA194A67221EBF9600E9301F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DA194A69221EBF9600E9301F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA194A6E221EBF9600E9301F /* npowerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = npowerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA194A72221EBF9600E9301F /* npowerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = npowerTests.swift; sourceTree = "<group>"; };
+		DA194A74221EBF9600E9301F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA194A79221EBF9600E9301F /* npowerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = npowerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA194A7D221EBF9600E9301F /* npowerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = npowerUITests.swift; sourceTree = "<group>"; };
+		DA194A7F221EBF9600E9301F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA7A5E0C221ED19F00EF37CD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DA7A5E0D221ED19F00EF37CD /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		DA7A5E11221ED2A900EF37CD /* RoutePlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePlanViewController.swift; sourceTree = "<group>"; };
+		DA7A5E12221ED2A900EF37CD /* RoutePlanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoutePlanViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA194A57221EBF9400E9301F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA194A6B221EBF9600E9301F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA194A76221EBF9600E9301F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6D165470DC633228A8953015 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				6D1657BB7A74175A34912EF8 /* Coordinator.swift */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		6D165D7D227586010DD5766A /* services */ = {
+			isa = PBXGroup;
+			children = (
+				6D1655713D889876A3EE2ADA /* AuthenticationService.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		DA194A51221EBF9400E9301F = {
+			isa = PBXGroup;
+			children = (
+				DA194A5C221EBF9400E9301F /* npower */,
+				DA194A71221EBF9600E9301F /* npowerTests */,
+				DA194A7C221EBF9600E9301F /* npowerUITests */,
+				DA194A5B221EBF9400E9301F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DA194A5B221EBF9400E9301F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA194A5A221EBF9400E9301F /* npower.app */,
+				DA194A6E221EBF9600E9301F /* npowerTests.xctest */,
+				DA194A79221EBF9600E9301F /* npowerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA194A5C221EBF9400E9301F /* npower */ = {
+			isa = PBXGroup;
+			children = (
+				6D165470DC633228A8953015 /* core */,
+				6D165D7D227586010DD5766A /* services */,
+				DA7A5E08221ED12300EF37CD /* views */,
+				DA194A5D221EBF9400E9301F /* AppDelegate.swift */,
+				DA194A64221EBF9600E9301F /* Assets.xcassets */,
+				DA194A66221EBF9600E9301F /* LaunchScreen.storyboard */,
+				DA194A69221EBF9600E9301F /* Info.plist */,
+				6D165F467D54B37E3DB41D44 /* MainCoordinator.swift */,
+			);
+			path = npower;
+			sourceTree = "<group>";
+		};
+		DA194A71221EBF9600E9301F /* npowerTests */ = {
+			isa = PBXGroup;
+			children = (
+				DA194A72221EBF9600E9301F /* npowerTests.swift */,
+				DA194A74221EBF9600E9301F /* Info.plist */,
+			);
+			path = npowerTests;
+			sourceTree = "<group>";
+		};
+		DA194A7C221EBF9600E9301F /* npowerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DA194A7D221EBF9600E9301F /* npowerUITests.swift */,
+				DA194A7F221EBF9600E9301F /* Info.plist */,
+			);
+			path = npowerUITests;
+			sourceTree = "<group>";
+		};
+		DA7A5E08221ED12300EF37CD /* views */ = {
+			isa = PBXGroup;
+			children = (
+				DA7A5E10221ED29300EF37CD /* routePlan */,
+				DA7A5E09221ED13800EF37CD /* login */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		DA7A5E09221ED13800EF37CD /* login */ = {
+			isa = PBXGroup;
+			children = (
+				DA7A5E0C221ED19F00EF37CD /* LoginViewController.swift */,
+				DA7A5E0D221ED19F00EF37CD /* LoginViewController.xib */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		DA7A5E10221ED29300EF37CD /* routePlan */ = {
+			isa = PBXGroup;
+			children = (
+				DA7A5E11221ED2A900EF37CD /* RoutePlanViewController.swift */,
+				DA7A5E12221ED2A900EF37CD /* RoutePlanViewController.xib */,
+			);
+			path = routePlan;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA194A59221EBF9400E9301F /* npower */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA194A82221EBF9600E9301F /* Build configuration list for PBXNativeTarget "npower" */;
+			buildPhases = (
+				DA194A56221EBF9400E9301F /* Sources */,
+				DA194A57221EBF9400E9301F /* Frameworks */,
+				DA194A58221EBF9400E9301F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = npower;
+			productName = npower;
+			productReference = DA194A5A221EBF9400E9301F /* npower.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DA194A6D221EBF9600E9301F /* npowerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA194A85221EBF9600E9301F /* Build configuration list for PBXNativeTarget "npowerTests" */;
+			buildPhases = (
+				DA194A6A221EBF9600E9301F /* Sources */,
+				DA194A6B221EBF9600E9301F /* Frameworks */,
+				DA194A6C221EBF9600E9301F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA194A70221EBF9600E9301F /* PBXTargetDependency */,
+			);
+			name = npowerTests;
+			productName = npowerTests;
+			productReference = DA194A6E221EBF9600E9301F /* npowerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DA194A78221EBF9600E9301F /* npowerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA194A88221EBF9600E9301F /* Build configuration list for PBXNativeTarget "npowerUITests" */;
+			buildPhases = (
+				DA194A75221EBF9600E9301F /* Sources */,
+				DA194A76221EBF9600E9301F /* Frameworks */,
+				DA194A77221EBF9600E9301F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA194A7B221EBF9600E9301F /* PBXTargetDependency */,
+			);
+			name = npowerUITests;
+			productName = npowerUITests;
+			productReference = DA194A79221EBF9600E9301F /* npowerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA194A52221EBF9400E9301F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = kmdpoland;
+				TargetAttributes = {
+					DA194A59221EBF9400E9301F = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					DA194A6D221EBF9600E9301F = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = DA194A59221EBF9400E9301F;
+					};
+					DA194A78221EBF9600E9301F = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = DA194A59221EBF9400E9301F;
+					};
+				};
+			};
+			buildConfigurationList = DA194A55221EBF9400E9301F /* Build configuration list for PBXProject "npower" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DA194A51221EBF9400E9301F;
+			productRefGroup = DA194A5B221EBF9400E9301F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA194A59221EBF9400E9301F /* npower */,
+				DA194A6D221EBF9600E9301F /* npowerTests */,
+				DA194A78221EBF9600E9301F /* npowerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA194A58221EBF9400E9301F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA194A68221EBF9600E9301F /* LaunchScreen.storyboard in Resources */,
+				DA7A5E14221ED2A900EF37CD /* RoutePlanViewController.xib in Resources */,
+				DA194A65221EBF9600E9301F /* Assets.xcassets in Resources */,
+				DA7A5E0F221ED19F00EF37CD /* LoginViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA194A6C221EBF9600E9301F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA194A77221EBF9600E9301F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA194A56221EBF9400E9301F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA7A5E0E221ED19F00EF37CD /* LoginViewController.swift in Sources */,
+				DA194A5E221EBF9400E9301F /* AppDelegate.swift in Sources */,
+				6D165AE6C091100D529C9303 /* Coordinator.swift in Sources */,
+				6D165F4476F814F5095CC167 /* MainCoordinator.swift in Sources */,
+				6D16565167798429FCB50DA8 /* AuthenticationService.swift in Sources */,
+				DA7A5E13221ED2A900EF37CD /* RoutePlanViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA194A6A221EBF9600E9301F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA194A73221EBF9600E9301F /* npowerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA194A75221EBF9600E9301F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA194A7E221EBF9600E9301F /* npowerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DA194A70221EBF9600E9301F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA194A59221EBF9400E9301F /* npower */;
+			targetProxy = DA194A6F221EBF9600E9301F /* PBXContainerItemProxy */;
+		};
+		DA194A7B221EBF9600E9301F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA194A59221EBF9400E9301F /* npower */;
+			targetProxy = DA194A7A221EBF9600E9301F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DA194A66221EBF9600E9301F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA194A67221EBF9600E9301F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DA194A80221EBF9600E9301F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DA194A81221EBF9600E9301F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DA194A83221EBF9600E9301F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 873MGG72QS;
+				INFOPLIST_FILE = npower/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pl.kmdpoland.npower;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DA194A84221EBF9600E9301F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 873MGG72QS;
+				INFOPLIST_FILE = npower/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pl.kmdpoland.npower;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DA194A86221EBF9600E9301F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 873MGG72QS;
+				INFOPLIST_FILE = npowerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pl.kmdpoland.npowerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/npower.app/npower";
+			};
+			name = Debug;
+		};
+		DA194A87221EBF9600E9301F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 873MGG72QS;
+				INFOPLIST_FILE = npowerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pl.kmdpoland.npowerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/npower.app/npower";
+			};
+			name = Release;
+		};
+		DA194A89221EBF9600E9301F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 873MGG72QS;
+				INFOPLIST_FILE = npowerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pl.kmdpoland.npowerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = npower;
+			};
+			name = Debug;
+		};
+		DA194A8A221EBF9600E9301F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 873MGG72QS;
+				INFOPLIST_FILE = npowerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pl.kmdpoland.npowerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = npower;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA194A55221EBF9400E9301F /* Build configuration list for PBXProject "npower" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA194A80221EBF9600E9301F /* Debug */,
+				DA194A81221EBF9600E9301F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA194A82221EBF9600E9301F /* Build configuration list for PBXNativeTarget "npower" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA194A83221EBF9600E9301F /* Debug */,
+				DA194A84221EBF9600E9301F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA194A85221EBF9600E9301F /* Build configuration list for PBXNativeTarget "npowerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA194A86221EBF9600E9301F /* Debug */,
+				DA194A87221EBF9600E9301F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA194A88221EBF9600E9301F /* Build configuration list for PBXNativeTarget "npowerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA194A89221EBF9600E9301F /* Debug */,
+				DA194A8A221EBF9600E9301F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DA194A52221EBF9400E9301F /* Project object */;
+}
