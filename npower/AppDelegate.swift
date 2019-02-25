@@ -1,11 +1,5 @@
-//
-//  AppDelegate.swift
-//  npower
-//
-//  Created by Czechowski.Maciej MCZ on 21/02/2019.
-//  Copyright © 2019 kmdpoland. All rights reserved.
-//
 
+import Dip
 import UIKit
 
 @UIApplicationMain
@@ -14,13 +8,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var coordinator: MainCoordinator?
 
+    private let container = DependencyContainer { container in
+        container.register{ ApiClient() as ApiClientProtocol }
+        container.register{ AuthenticationService() as AuthenticationServiceProtocol }
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // create the main navigation controller to be used for our app
         let navController = UINavigationController()
-        let authService = AuthenticationService()
         
         // send that into our coordinator so that it can display view controllers
-        coordinator = MainCoordinator(navigationController: navController, authenticationService: authService)
+        coordinator = MainCoordinator(navigationController: navController, container: container)
         
         // tell the coordinator to take over control
         coordinator?.start()

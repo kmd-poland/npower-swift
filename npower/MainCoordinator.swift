@@ -1,41 +1,62 @@
 import UIKit
+import Dip
 import PromiseKit
-
+import Mapbox
 protocol LoginCoordinatorProtocol {
     func logIn() -> Promise<Void>
 }
 
 class MainCoordinator: Coordinator, LoginCoordinatorProtocol {
+    let container: DependencyContainer!
     let authenticationService: AuthenticationServiceProtocol!
+    let apiClientService: ApiClientProtocol!
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
 
-    init(navigationController: UINavigationController, authenticationService: AuthenticationServiceProtocol) {
+    init(navigationController: UINavigationController,
+         container: DependencyContainer) {
         self.navigationController = navigationController
-        self.authenticationService = authenticationService
+        self.container = container
+        self.authenticationService = try! container.resolve() as AuthenticationServiceProtocol
+        self.apiClientService = try! container.resolve() as ApiClientProtocol
+
     }
 
     func start() {
+        navigationController.setNavigationBarHidden(true, animated: false)
         if (!authenticationService.isUserLoggedIn()) {
             let vc = LoginViewController()
             vc.coordinator = self
-            navigationController.setNavigationBarHidden(true, animated: false)
             navigationController.pushViewController(vc, animated: false)
 
         } else {
-            let vc = RoutePlanViewController()
-            navigationController.pushViewController(vc, animated: false)
-            navigationController.setNavigationBarHidden(false, animated: false)
+            showRoutePlan()
         }
     }
-    
+
+    private func showRoutePlan() {
+
+        let viewModel = try! RoutePlanViewModel(apiClient: container.resolve())
+
+        let vc = RoutePlanViewController()
+        _ = vc.view
+
+        let routePlanList = RoutePlanListViewController()
+
+        vc.viewModel = viewModel
+        routePlanList.viewModel = viewModel
+
+        vc.panelController?.set(contentViewController: routePlanList)
+        vc.panelController?.track(scrollView: routePlanList.tableView)
+
+        navigationController.pushViewController(vc, animated: false)
+    }
+
     func logIn() -> Promise<Void> {
         return authenticationService
                 .getAuthTokenWithWebLogin()
-                .done{[unowned self] _ in
+                .done { [unowned self] _ in
                     self.navigationController.viewControllers = [RoutePlanViewController()]
-                    self.navigationController.setNavigationBarHidden(false, animated: false)
-
                 }
     }
 }

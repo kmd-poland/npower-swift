@@ -1,42 +1,53 @@
-//
-//  RoutePlanViewController.swift
-//  npower
-//
-//  Created by Czechowski.Maciej MCZ on 21/02/2019.
-//  Copyright © 2019 kmdpoland. All rights reserved.
-//
-
+import ViewModelOwners
+import RxSwift
 import UIKit
 import Mapbox
+import FloatingPanel
 
-class RoutePlanMapView: MGLMapView {}
+class RoutePlanMapView: MGLMapView {
+}
 
-class RoutePlanViewController: UIViewController, MGLMapViewDelegate {
+class RoutePlanViewController: UIViewController, MGLMapViewDelegate, NonReusableViewModelOwner {
 
     @IBOutlet weak var mapView: RoutePlanMapView!
-    
+    var panelController: FloatingPanelController?
+    var panelDelegate: FloatingPanelControllerDelegate?
+    //private var panelConfigurationProvider: PanelConfigurationProvider?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        mapView.styleURL = MGLStyle.satelliteStyleURL
+        mapView.styleURL = MGLStyle.streetsStyleURL
         mapView.delegate = self
         mapView.showsUserLocation = true
-        // Do any additional setup after loading the view.
+        mapView.userTrackingMode = .follow
+        mapView.zoomLevel = 3
+        
+        self.panelController = {
+            let fpc = FloatingPanelController()
+            fpc.surfaceView.backgroundColor = .clear
+            fpc.surfaceView.cornerRadius = 9
+            fpc.addPanel(toParent: self)
+            return fpc
+        }()
     }
 
-    
+    func didSetViewModel(_ viewModel: RoutePlanViewModelProtocol, disposeBag: DisposeBag) {
+//        viewModel
+//                .visits
+//                .subscribe((onNext: { [unowned self] (value) in
+//                    self.titleLabel.text = value
+//                })
+//                .disposed(by: disposeBag)
+    }
+
+
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
         // Always allow callouts to popup when annotations are tapped.
         return true
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+

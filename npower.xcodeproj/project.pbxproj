@@ -7,22 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D165627B42CA64DEB25EF85 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D165F92B15A0608B1B0AE6E /* Extensions.swift */; };
 		6D16565167798429FCB50DA8 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1655713D889876A3EE2ADA /* AuthenticationService.swift */; };
+		6D165A01C177E10BD7355F32 /* RoutePlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D165068D852F6F23BF7650E /* RoutePlan.swift */; };
+		6D165A027075FFD6A6E628A4 /* RoutePlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1656EEC9B76783250A410A /* RoutePlanViewModel.swift */; };
 		6D165AE6C091100D529C9303 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1657BB7A74175A34912EF8 /* Coordinator.swift */; };
+		6D165D922E6578DC4749ADDC /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D16508CEF0E233D450276A9 /* ApiClient.swift */; };
 		6D165F4476F814F5095CC167 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D165F467D54B37E3DB41D44 /* MainCoordinator.swift */; };
+		6D165FC9C017C2EE567F5964 /* RoutePlanListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1656AF33EDEEF23EA636D5 /* RoutePlanListViewController.swift */; };
 		6F2AF1B4221EDE0700E37101 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F2AF1B3221EDE0700E37101 /* Mapbox.framework */; };
+		DA112B2522240C8B00831BFF /* FloatingPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA112B2422240C8B00831BFF /* FloatingPanel.framework */; };
+		DA112B2922242ECA00831BFF /* Dip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA112B2822242ECA00831BFF /* Dip.framework */; };
 		DA194A5E221EBF9400E9301F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA194A5D221EBF9400E9301F /* AppDelegate.swift */; };
 		DA194A65221EBF9600E9301F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA194A64221EBF9600E9301F /* Assets.xcassets */; };
 		DA194A68221EBF9600E9301F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA194A66221EBF9600E9301F /* LaunchScreen.storyboard */; };
 		DA194A73221EBF9600E9301F /* npowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA194A72221EBF9600E9301F /* npowerTests.swift */; };
 		DA194A7E221EBF9600E9301F /* npowerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA194A7D221EBF9600E9301F /* npowerUITests.swift */; };
 		DA26C8A3221F19C800B769F0 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA26C8A2221F19C800B769F0 /* PromiseKit.framework */; };
+		DA3685DE22244085004A55F2 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3685DD22244085004A55F2 /* Kingfisher.framework */; };
+		DA3685E42224460B004A55F2 /* VisitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3685E32224460B004A55F2 /* VisitTableViewCell.swift */; };
 		DA7A5E0E221ED19F00EF37CD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7A5E0C221ED19F00EF37CD /* LoginViewController.swift */; };
 		DA7A5E0F221ED19F00EF37CD /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA7A5E0D221ED19F00EF37CD /* LoginViewController.xib */; };
 		DA7A5E13221ED2A900EF37CD /* RoutePlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7A5E11221ED2A900EF37CD /* RoutePlanViewController.swift */; };
 		DA7A5E14221ED2A900EF37CD /* RoutePlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA7A5E12221ED2A900EF37CD /* RoutePlanViewController.xib */; };
 		DA7A5E17221ED9E900EF37CD /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7A5E16221ED9E900EF37CD /* RxSwift.framework */; };
 		DA7A5E19221ED9EB00EF37CD /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7A5E18221ED9EB00EF37CD /* RxCocoa.framework */; };
+		DA7B33DE222040800015ED96 /* ViewModelOwners.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7B33DD2220407F0015ED96 /* ViewModelOwners.framework */; };
+		DA7B33E02220459D0015ED96 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7B33DF2220459D0015ED96 /* RxSwiftExt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,10 +54,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D165068D852F6F23BF7650E /* RoutePlan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutePlan.swift; sourceTree = "<group>"; };
+		6D16508CEF0E233D450276A9 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		6D1655713D889876A3EE2ADA /* AuthenticationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		6D1656AF33EDEEF23EA636D5 /* RoutePlanListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutePlanListViewController.swift; sourceTree = "<group>"; };
+		6D1656EEC9B76783250A410A /* RoutePlanViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutePlanViewModel.swift; sourceTree = "<group>"; };
 		6D1657BB7A74175A34912EF8 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		6D165F467D54B37E3DB41D44 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		6D165F92B15A0608B1B0AE6E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		6F2AF1B3221EDE0700E37101 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = Carthage/Build/iOS/Mapbox.framework; sourceTree = "<group>"; };
+		DA112B222224059600831BFF /* Pulley.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pulley.framework; path = Carthage/Build/iOS/Pulley.framework; sourceTree = "<group>"; };
+		DA112B2422240C8B00831BFF /* FloatingPanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FloatingPanel.framework; path = Carthage/Build/iOS/FloatingPanel.framework; sourceTree = "<group>"; };
+		DA112B2822242ECA00831BFF /* Dip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dip.framework; path = Carthage/Build/iOS/Dip.framework; sourceTree = "<group>"; };
 		DA194A5A221EBF9400E9301F /* npower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = npower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA194A5D221EBF9400E9301F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA194A64221EBF9600E9301F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,12 +78,17 @@
 		DA194A7D221EBF9600E9301F /* npowerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = npowerUITests.swift; sourceTree = "<group>"; };
 		DA194A7F221EBF9600E9301F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA26C8A2221F19C800B769F0 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
+		DA3685DD22244085004A55F2 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		DA3685E32224460B004A55F2 /* VisitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitTableViewCell.swift; sourceTree = "<group>"; };
 		DA7A5E0C221ED19F00EF37CD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DA7A5E0D221ED19F00EF37CD /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		DA7A5E11221ED2A900EF37CD /* RoutePlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePlanViewController.swift; sourceTree = "<group>"; };
 		DA7A5E12221ED2A900EF37CD /* RoutePlanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoutePlanViewController.xib; sourceTree = "<group>"; };
 		DA7A5E16221ED9E900EF37CD /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		DA7A5E18221ED9EB00EF37CD /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		DA7B33DB222040780015ED96 /* Aiolos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Aiolos.framework; path = Carthage/Build/iOS/Aiolos.framework; sourceTree = "<group>"; };
+		DA7B33DD2220407F0015ED96 /* ViewModelOwners.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ViewModelOwners.framework; path = Carthage/Build/iOS/ViewModelOwners.framework; sourceTree = "<group>"; };
+		DA7B33DF2220459D0015ED96 /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftExt.framework; path = Carthage/Build/iOS/RxSwiftExt.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +96,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA7B33E02220459D0015ED96 /* RxSwiftExt.framework in Frameworks */,
 				6F2AF1B4221EDE0700E37101 /* Mapbox.framework in Frameworks */,
 				DA7A5E19221ED9EB00EF37CD /* RxCocoa.framework in Frameworks */,
 				DA7A5E17221ED9E900EF37CD /* RxSwift.framework in Frameworks */,
+				DA7B33DE222040800015ED96 /* ViewModelOwners.framework in Frameworks */,
+				DA112B2522240C8B00831BFF /* FloatingPanel.framework in Frameworks */,
+				DA112B2922242ECA00831BFF /* Dip.framework in Frameworks */,
+				DA3685DE22244085004A55F2 /* Kingfisher.framework in Frameworks */,
 				DA26C8A3221F19C800B769F0 /* PromiseKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,10 +125,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D165137B7914426003D26DF /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				6D165068D852F6F23BF7650E /* RoutePlan.swift */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
 		6D165470DC633228A8953015 /* core */ = {
 			isa = PBXGroup;
 			children = (
 				6D1657BB7A74175A34912EF8 /* Coordinator.swift */,
+				6D165F92B15A0608B1B0AE6E /* Extensions.swift */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -108,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				6D1655713D889876A3EE2ADA /* AuthenticationService.swift */,
+				6D16508CEF0E233D450276A9 /* ApiClient.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -136,7 +175,7 @@
 		DA194A5C221EBF9400E9301F /* npower */ = {
 			isa = PBXGroup;
 			children = (
-				DA7A5E1B221EDB0500EF37CD /* assets */,
+				DA7A5E1B221EDB0500EF37CD /* viewModels */,
 				6D165470DC633228A8953015 /* core */,
 				6D165D7D227586010DD5766A /* services */,
 				DA7A5E08221ED12300EF37CD /* views */,
@@ -145,6 +184,7 @@
 				DA194A66221EBF9600E9301F /* LaunchScreen.storyboard */,
 				DA194A69221EBF9600E9301F /* Info.plist */,
 				6D165F467D54B37E3DB41D44 /* MainCoordinator.swift */,
+				6D165137B7914426003D26DF /* domain */,
 			);
 			path = npower;
 			sourceTree = "<group>";
@@ -190,6 +230,8 @@
 			children = (
 				DA7A5E11221ED2A900EF37CD /* RoutePlanViewController.swift */,
 				DA7A5E12221ED2A900EF37CD /* RoutePlanViewController.xib */,
+				6D1656AF33EDEEF23EA636D5 /* RoutePlanListViewController.swift */,
+				DA3685E32224460B004A55F2 /* VisitTableViewCell.swift */,
 			);
 			path = routePlan;
 			sourceTree = "<group>";
@@ -197,6 +239,13 @@
 		DA7A5E15221ED9E800EF37CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DA3685DD22244085004A55F2 /* Kingfisher.framework */,
+				DA112B2822242ECA00831BFF /* Dip.framework */,
+				DA112B2422240C8B00831BFF /* FloatingPanel.framework */,
+				DA112B222224059600831BFF /* Pulley.framework */,
+				DA7B33DF2220459D0015ED96 /* RxSwiftExt.framework */,
+				DA7B33DD2220407F0015ED96 /* ViewModelOwners.framework */,
+				DA7B33DB222040780015ED96 /* Aiolos.framework */,
 				6F2AF1B3221EDE0700E37101 /* Mapbox.framework */,
 				DA26C8A2221F19C800B769F0 /* PromiseKit.framework */,
 				DA7A5E18221ED9EB00EF37CD /* RxCocoa.framework */,
@@ -205,11 +254,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DA7A5E1B221EDB0500EF37CD /* assets */ = {
+		DA7A5E1B221EDB0500EF37CD /* viewModels */ = {
 			isa = PBXGroup;
 			children = (
+				6D1656EEC9B76783250A410A /* RoutePlanViewModel.swift */,
 			);
-			path = assets;
+			path = viewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +403,11 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Mapbox.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ViewModelOwners.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwiftExt.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FloatingPanel.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Dip.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -375,6 +430,12 @@
 				6D165F4476F814F5095CC167 /* MainCoordinator.swift in Sources */,
 				6D16565167798429FCB50DA8 /* AuthenticationService.swift in Sources */,
 				DA7A5E13221ED2A900EF37CD /* RoutePlanViewController.swift in Sources */,
+				6D165D922E6578DC4749ADDC /* ApiClient.swift in Sources */,
+				6D165A027075FFD6A6E628A4 /* RoutePlanViewModel.swift in Sources */,
+				6D165A01C177E10BD7355F32 /* RoutePlan.swift in Sources */,
+				DA3685E42224460B004A55F2 /* VisitTableViewCell.swift in Sources */,
+				6D165627B42CA64DEB25EF85 /* Extensions.swift in Sources */,
+				6D165FC9C017C2EE567F5964 /* RoutePlanListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
