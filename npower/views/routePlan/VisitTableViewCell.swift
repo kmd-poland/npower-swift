@@ -4,13 +4,13 @@ import Kingfisher
 
 class VisitTableViewCell: UITableViewCell {
 
-    private let avatarImageView: UIImageView = {
+    var imageTag: String?
+    
+    let avatarImageView: UIImageView = {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
-    
-    private var downloadTask: DownloadTask?
     
     let titleLabel: UILabel = {
         let lbl = UILabel()
@@ -36,16 +36,11 @@ class VisitTableViewCell: UITableViewCell {
          setLayout()
     }
     
-    func setAvatarUrl(_ url: String) {
-        downloadTask?.cancel()
-        if let downloadUrl = URL(string: url) {
-            downloadTask = avatarImageView.kf.setImage(with: downloadUrl)
-        }
-    }
-    
     override func prepareForReuse() {
-        downloadTask?.cancel()
+        avatarImageView.image = UIImage(named: "placeholder")
+        imageTag = nil
     }
+
     private func setLayout(){
         let textStackView = UIStackView()
         textStackView.axis = .vertical
@@ -66,7 +61,7 @@ class VisitTableViewCell: UITableViewCell {
             avatarImageView.widthAnchor.constraint(equalToConstant: 60.0),
             avatarImageView.heightAnchor.constraint(equalToConstant: 60.0),
 
-            containerStackView.leftAnchor.constraint(equalToSystemSpacingAfter: contentView.readableContentGuide.leftAnchor, multiplier: 1),
+            containerStackView.leftAnchor.constraint(equalTo: contentView.readableContentGuide.leftAnchor),
 
             containerStackView.topAnchor.constraint(equalToSystemSpacingBelow: contentView.readableContentGuide.topAnchor, multiplier: 1),
 
@@ -74,8 +69,5 @@ class VisitTableViewCell: UITableViewCell {
 
             contentView.readableContentGuide.rightAnchor.constraint(equalToSystemSpacingAfter: containerStackView.rightAnchor, multiplier: 1)
             ])
-        
-        avatarImageView.layer.cornerRadius = 30
-        avatarImageView.clipsToBounds = true
     }
 }

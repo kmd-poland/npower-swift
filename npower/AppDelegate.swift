@@ -11,6 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private let container = DependencyContainer { container in
         container.register{ ApiClient() as ApiClientProtocol }
         container.register{ AuthenticationService() as AuthenticationServiceProtocol }
+        container.register{ AvatarImageProvider() as AvatarImageProviderProtocol }
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -19,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // send that into our coordinator so that it can display view controllers
         coordinator = MainCoordinator(navigationController: navController, container: container)
-        
+    
         // tell the coordinator to take over control
         coordinator?.start()
         

@@ -7,6 +7,8 @@ import Kingfisher
 
 class RoutePlanListViewController: UITableViewController, NonReusableViewModelOwner {
 
+    private let avatarProvider: AvatarImageProviderProtocol
+    
     private let timeFormatter: DateFormatter = {
         let df = DateFormatter()
         df.dateFormat = "HH:mm"
@@ -16,7 +18,14 @@ class RoutePlanListViewController: UITableViewController, NonReusableViewModelOw
     private var visualEffectView: UIVisualEffectView?
     private var visits: [Visit]?
    
-  
+    init(_ avatarProvider: AvatarImageProviderProtocol) {
+        self.avatarProvider = avatarProvider
+        super.init(style: .plain)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,9 +63,20 @@ class RoutePlanListViewController: UITableViewController, NonReusableViewModelOw
         visitCell.titleLabel.text = "\(timeFormatter.string(from: visit.startTime)) \(visit.firstName ?? "") \(visit.lastName ?? "")"
         visitCell.subtitleLabel.text = visit.address
         
-        if let avatarUrl = visit.avatar {
-            visitCell.setAvatarUrl(avatarUrl)
+        if let avatarUrlString = visit.avatar, let avatarUrl = URL(string: avatarUrlString) {
+            visitCell.imageTag = avatarUrlString
+            self
+                .avatarProvider
+                .getAvatar(for: avatarUrl)
+                .done{[unowned visitCell] img in
+                    if visitCell.imageTag == avatarUrlString {
+                        visitCell.avatarImageView.image = img
+                    }
+                }.catch{
+                    print($0)
+                }
         }
+        
         visitCell.backgroundColor = .clear
        
         return cell

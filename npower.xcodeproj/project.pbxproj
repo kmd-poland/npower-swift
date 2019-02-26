@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D16549951E0C446C040A8BE /* AvatarImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D165A6D0E691D138247190E /* AvatarImageProvider.swift */; };
 		6D165627B42CA64DEB25EF85 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D165F92B15A0608B1B0AE6E /* Extensions.swift */; };
 		6D16565167798429FCB50DA8 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1655713D889876A3EE2ADA /* AuthenticationService.swift */; };
 		6D165A01C177E10BD7355F32 /* RoutePlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D165068D852F6F23BF7650E /* RoutePlan.swift */; };
@@ -60,6 +61,7 @@
 		6D1656AF33EDEEF23EA636D5 /* RoutePlanListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutePlanListViewController.swift; sourceTree = "<group>"; };
 		6D1656EEC9B76783250A410A /* RoutePlanViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutePlanViewModel.swift; sourceTree = "<group>"; };
 		6D1657BB7A74175A34912EF8 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		6D165A6D0E691D138247190E /* AvatarImageProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImageProvider.swift; sourceTree = "<group>"; };
 		6D165F467D54B37E3DB41D44 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		6D165F92B15A0608B1B0AE6E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		6F2AF1B3221EDE0700E37101 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = Carthage/Build/iOS/Mapbox.framework; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				6D1655713D889876A3EE2ADA /* AuthenticationService.swift */,
 				6D16508CEF0E233D450276A9 /* ApiClient.swift */,
+				6D165A6D0E691D138247190E /* AvatarImageProvider.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				DA3685E42224460B004A55F2 /* VisitTableViewCell.swift in Sources */,
 				6D165627B42CA64DEB25EF85 /* Extensions.swift in Sources */,
 				6D165FC9C017C2EE567F5964 /* RoutePlanListViewController.swift in Sources */,
+				6D16549951E0C446C040A8BE /* AvatarImageProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

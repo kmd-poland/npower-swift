@@ -38,10 +38,10 @@ class MainCoordinator: Coordinator, LoginCoordinatorProtocol {
 
         let viewModel = try! RoutePlanViewModel(apiClient: container.resolve())
 
-        let vc = RoutePlanViewController()
+        let vc = try! RoutePlanViewController(container.resolve())
         _ = vc.view
 
-        let routePlanList = RoutePlanListViewController()
+        let routePlanList = try! RoutePlanListViewController(container.resolve())
 
         vc.viewModel = viewModel
         routePlanList.viewModel = viewModel
@@ -56,7 +56,8 @@ class MainCoordinator: Coordinator, LoginCoordinatorProtocol {
         return authenticationService
                 .getAuthTokenWithWebLogin()
                 .done { [unowned self] _ in
-                    self.navigationController.viewControllers = [RoutePlanViewController()]
+                    self.navigationController.viewControllers = []
+                    self.showRoutePlan()
                 }
     }
 }

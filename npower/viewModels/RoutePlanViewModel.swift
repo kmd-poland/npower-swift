@@ -19,7 +19,7 @@ class RoutePlanViewModel: RoutePlanViewModelProtocol {
         self.visits =
                 Observable
                         .deferred { [unowned self] in
-                            self.apiClient.getAndDecodeJsonResponse(toType: RoutePlan.self, from: self.url, queryParameters: [:])
+                            self.apiClient.getAndDecodeJsonResponse(toType: RoutePlan.self, from: self.url, queryParameters: ["seed": "1223"])
                         }
                         .map { rp in
                             rp.visits
