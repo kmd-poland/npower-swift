@@ -2,6 +2,8 @@ import UIKit
 import Dip
 import PromiseKit
 import Mapbox
+import MapboxDirections
+
 protocol LoginCoordinatorProtocol {
     func logIn() -> Promise<Void>
 }
@@ -36,7 +38,7 @@ class MainCoordinator: Coordinator, LoginCoordinatorProtocol {
 
     private func showRoutePlan() {
 
-        let viewModel = try! RoutePlanViewModel(apiClient: container.resolve())
+        let viewModel = try! RoutePlanViewModel(apiClient: container.resolve(), directions: Directions.shared, locationManager: CLLocationManager())
 
         let vc = try! RoutePlanViewController(container.resolve())
         _ = vc.view

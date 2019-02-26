@@ -13,18 +13,18 @@ class RoutePlanViewController: UIViewController, MGLMapViewDelegate, NonReusable
 
     @IBOutlet weak var mapView: RoutePlanMapView!
     var panelController: FloatingPanelController?
-    var panelDelegate: FloatingPanelControllerDelegate?
     private let avatarProvider: AvatarImageProviderProtocol
+    private var routeLine: MGLPolyline?
 
     init(_ avatarProvider: AvatarImageProviderProtocol) {
         self.avatarProvider = avatarProvider
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,6 +48,25 @@ class RoutePlanViewController: UIViewController, MGLMapViewDelegate, NonReusable
                 .observeOn(MainScheduler.instance)
                 .subscribe(onNext: { [unowned self] (value) in
                     self.displayAnnotations(for: value)
+                })
+                .disposed(by: disposeBag)
+
+        viewModel
+                .currentRoute
+                .observeOn(MainScheduler.instance)
+                .subscribe(onNext: { [unowned self] route in
+                    if let oldRoute = self.routeLine {
+                        self.mapView.removeAnnotation(oldRoute)
+                    }
+                    if var routeCoordinates = route.coordinates {
+                        let routeLine = MGLPolyline(coordinates: routeCoordinates, count: route.coordinateCount)
+
+                        // Add the polyline to the map and fit the viewport to the polyline.
+                        self.mapView.addAnnotation(routeLine)
+                   
+                        self.mapView.setVisibleCoordinates(&routeCoordinates, count: route.coordinateCount, edgePadding:  UIEdgeInsets(top: 30, left: 30, bottom: 300, right: 30), animated: true)
+                        self.routeLine = routeLine
+                    }
                 })
                 .disposed(by: disposeBag)
     }
@@ -94,7 +113,7 @@ class RoutePlanViewController: UIViewController, MGLMapViewDelegate, NonReusable
             var image = mapView.dequeueReusableAnnotationImage(withIdentifier: avatarUrl.description)
             if image == nil {
                 image = MGLAnnotationImage(image: UIImage(named: "placeholder")!, reuseIdentifier: avatarUrl.description)
-              
+
                 avatarProvider.getAvatar(for: avatarUrl)
                         .done { img in
                             image?.image = img

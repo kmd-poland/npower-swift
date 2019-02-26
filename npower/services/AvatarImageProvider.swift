@@ -20,6 +20,7 @@ class AvatarImageProvider: AvatarImageProviderProtocol {
                     with: url,
                     options: [
                         .processor(processor),
+                        .cacheSerializer(FormatIndicatedCacheSerializer.png),
                         .scaleFactor(UIScreen.main.scale),
                         .cacheOriginalImage
                     ])

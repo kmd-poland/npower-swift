@@ -6,3 +6,4 @@ github "scenee/FloatingPanel"
 github "RxSwiftCommunity/RxSwiftExt"
 github "AliSoftware/Dip"
 github "onevcat/Kingfisher" ~> 5.0
+github "mapbox/MapboxDirections.swift" ~> 0.27

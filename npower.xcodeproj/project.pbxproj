@@ -35,6 +35,8 @@
 		DA7A5E19221ED9EB00EF37CD /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7A5E18221ED9EB00EF37CD /* RxCocoa.framework */; };
 		DA7B33DE222040800015ED96 /* ViewModelOwners.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7B33DD2220407F0015ED96 /* ViewModelOwners.framework */; };
 		DA7B33E02220459D0015ED96 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7B33DF2220459D0015ED96 /* RxSwiftExt.framework */; };
+		DA8C7DEA22258BCC00E5C9E6 /* MapboxDirections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8C7DE922258BCC00E5C9E6 /* MapboxDirections.framework */; };
+		DA8C7DEC2225995E00E5C9E6 /* Polyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8C7DEB2225995E00E5C9E6 /* Polyline.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		DA7B33DB222040780015ED96 /* Aiolos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Aiolos.framework; path = Carthage/Build/iOS/Aiolos.framework; sourceTree = "<group>"; };
 		DA7B33DD2220407F0015ED96 /* ViewModelOwners.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ViewModelOwners.framework; path = Carthage/Build/iOS/ViewModelOwners.framework; sourceTree = "<group>"; };
 		DA7B33DF2220459D0015ED96 /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftExt.framework; path = Carthage/Build/iOS/RxSwiftExt.framework; sourceTree = "<group>"; };
+		DA8C7DE922258BCC00E5C9E6 /* MapboxDirections.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxDirections.framework; path = Carthage/Build/iOS/MapboxDirections.framework; sourceTree = "<group>"; };
+		DA8C7DEB2225995E00E5C9E6 /* Polyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Polyline.framework; path = Carthage/Build/iOS/Polyline.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				DA112B2522240C8B00831BFF /* FloatingPanel.framework in Frameworks */,
 				DA112B2922242ECA00831BFF /* Dip.framework in Frameworks */,
 				DA3685DE22244085004A55F2 /* Kingfisher.framework in Frameworks */,
+				DA8C7DEA22258BCC00E5C9E6 /* MapboxDirections.framework in Frameworks */,
+				DA8C7DEC2225995E00E5C9E6 /* Polyline.framework in Frameworks */,
 				DA26C8A3221F19C800B769F0 /* PromiseKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,6 +248,8 @@
 		DA7A5E15221ED9E800EF37CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DA8C7DEB2225995E00E5C9E6 /* Polyline.framework */,
+				DA8C7DE922258BCC00E5C9E6 /* MapboxDirections.framework */,
 				DA3685DD22244085004A55F2 /* Kingfisher.framework */,
 				DA112B2822242ECA00831BFF /* Dip.framework */,
 				DA112B2422240C8B00831BFF /* FloatingPanel.framework */,
@@ -411,6 +419,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/FloatingPanel.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Dip.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MapboxDirections.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Polyline.framework",
 			);
 			outputFileListPaths = (
 			);
