@@ -12,6 +12,7 @@ class MainCoordinator: Coordinator, LoginCoordinatorProtocol {
     let container: DependencyContainer!
     let authenticationService: AuthenticationServiceProtocol!
     let apiClientService: ApiClientProtocol!
+    let geoFencingService: GeoFencingProtocol!
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
 
@@ -21,7 +22,8 @@ class MainCoordinator: Coordinator, LoginCoordinatorProtocol {
         self.container = container
         self.authenticationService = try! container.resolve() as AuthenticationServiceProtocol
         self.apiClientService = try! container.resolve() as ApiClientProtocol
-
+        self.geoFencingService = try! container.resolve() as GeoFencingProtocol
+        self.geoFencingService.coordinator = self
     }
 
     func start() {
@@ -38,7 +40,7 @@ class MainCoordinator: Coordinator, LoginCoordinatorProtocol {
 
     private func showRoutePlan() {
 
-        let viewModel = try! RoutePlanViewModel(apiClient: container.resolve(), directions: Directions.shared, locationManager: CLLocationManager())
+        let viewModel = try! RoutePlanViewModel(routePlanProvider: container.resolve(), directions: Directions.shared, locationManager: CLLocationManager(), geofenceService: container.resolve())
 
         let vc = try! RoutePlanViewController(container.resolve())
         _ = vc.view
@@ -52,6 +54,10 @@ class MainCoordinator: Coordinator, LoginCoordinatorProtocol {
         vc.panelController?.track(scrollView: routePlanList.tableView)
 
         navigationController.pushViewController(vc, animated: false)
+    }
+    
+    private func showVisit(_ visit: Visit) {
+            print(visit.avatar ?? "unknown visit")
     }
 
     func logIn() -> Promise<Void> {

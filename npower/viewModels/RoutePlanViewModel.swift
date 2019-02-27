@@ -18,19 +18,19 @@ class RoutePlanViewModel: NSObject, RoutePlanViewModelProtocol, CLLocationManage
     private let locationManager: CLLocationManager!
 
     private let lastLocation = Variable<CLLocationCoordinate2D?>(nil)
-    private let apiClient: ApiClientProtocol!
-
-
+    private let routePlanProvider: RoutePlanProviderProtocol!
+    private let geofenceService: GeoFencingProtocol!
+    
     var visits: Observable<[Visit]>!
     var currentRoute: Observable<Route>!
 
-    init(apiClient: ApiClientProtocol, directions: Directions, locationManager: CLLocationManager) {
+    init(routePlanProvider: RoutePlanProviderProtocol, directions: Directions, locationManager: CLLocationManager, geofenceService: GeoFencingProtocol) {
 
-        self.apiClient = apiClient
+        self.routePlanProvider = routePlanProvider
         self.directions = directions
         self.locationManager = locationManager
+        self.geofenceService = geofenceService
        
-
         super.init()
 
         initializeObservables()
@@ -44,12 +44,8 @@ class RoutePlanViewModel: NSObject, RoutePlanViewModelProtocol, CLLocationManage
         self.visits =
                 Observable
                         .deferred { [unowned self] in
-                            self.apiClient.getAndDecodeJsonResponse(toType: RoutePlan.self, from: self.url, queryParameters: ["seed": "1223"])
+                           self.routePlanProvider.routePlan
                         }
-                        .map { rp in
-                            rp.visits
-                        }
-                        .unwrap()
                         .retry(.exponentialDelayed(maxCount: 3, initial: 1.0, multiplier: 1.0), scheduler: delayScheduler)
                         .share()
 
@@ -60,9 +56,11 @@ class RoutePlanViewModel: NSObject, RoutePlanViewModelProtocol, CLLocationManage
                             visits.first
                         }
                         .unwrap()
+                        .do(onNext: {[unowned self] visit in self.geofenceService.setGeoFence(for: visit)})
                         .map { visit in
                             CLLocationCoordinate2D(latitude: visit.coordinates[1], longitude: visit.coordinates[0])
                         }
+        
 
         self.currentRoute =
                 Observable.combineLatest(visitForDirections, lastLocation.asObservable().unwrap())

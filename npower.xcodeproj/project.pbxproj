@@ -37,6 +37,8 @@
 		DA7B33E02220459D0015ED96 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7B33DF2220459D0015ED96 /* RxSwiftExt.framework */; };
 		DA8C7DEA22258BCC00E5C9E6 /* MapboxDirections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8C7DE922258BCC00E5C9E6 /* MapboxDirections.framework */; };
 		DA8C7DEC2225995E00E5C9E6 /* Polyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8C7DEB2225995E00E5C9E6 /* Polyline.framework */; };
+		DAA057E22226F492001DD425 /* RoutePlanProviderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA057E12226F492001DD425 /* RoutePlanProviderService.swift */; };
+		DAA057E42226F802001DD425 /* GeoFencingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA057E32226F802001DD425 /* GeoFencingService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		DA7B33DF2220459D0015ED96 /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftExt.framework; path = Carthage/Build/iOS/RxSwiftExt.framework; sourceTree = "<group>"; };
 		DA8C7DE922258BCC00E5C9E6 /* MapboxDirections.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxDirections.framework; path = Carthage/Build/iOS/MapboxDirections.framework; sourceTree = "<group>"; };
 		DA8C7DEB2225995E00E5C9E6 /* Polyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Polyline.framework; path = Carthage/Build/iOS/Polyline.framework; sourceTree = "<group>"; };
+		DAA057E12226F492001DD425 /* RoutePlanProviderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePlanProviderService.swift; sourceTree = "<group>"; };
+		DAA057E32226F802001DD425 /* GeoFencingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoFencingService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,8 @@
 				6D1655713D889876A3EE2ADA /* AuthenticationService.swift */,
 				6D16508CEF0E233D450276A9 /* ApiClient.swift */,
 				6D165A6D0E691D138247190E /* AvatarImageProvider.swift */,
+				DAA057E12226F492001DD425 /* RoutePlanProviderService.swift */,
+				DAA057E32226F802001DD425 /* GeoFencingService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -442,6 +448,8 @@
 				6D165AE6C091100D529C9303 /* Coordinator.swift in Sources */,
 				6D165F4476F814F5095CC167 /* MainCoordinator.swift in Sources */,
 				6D16565167798429FCB50DA8 /* AuthenticationService.swift in Sources */,
+				DAA057E42226F802001DD425 /* GeoFencingService.swift in Sources */,
+				DAA057E22226F492001DD425 /* RoutePlanProviderService.swift in Sources */,
 				DA7A5E13221ED2A900EF37CD /* RoutePlanViewController.swift in Sources */,
 				6D165D922E6578DC4749ADDC /* ApiClient.swift in Sources */,
 				6D165A027075FFD6A6E628A4 /* RoutePlanViewModel.swift in Sources */,
