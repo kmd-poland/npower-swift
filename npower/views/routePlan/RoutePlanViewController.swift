@@ -98,7 +98,7 @@ class RoutePlanViewController: UIViewController, MGLMapViewDelegate, NonReusable
         }
 
         self.mapView.setVisibleCoordinates(&coordinates, count: UInt(coordinates.count),
-                edgePadding: UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30),
+                edgePadding: UIEdgeInsets(top: 30, left: 30, bottom: 300, right: 30),
                 animated: true)
     }
 
@@ -114,7 +114,7 @@ class RoutePlanViewController: UIViewController, MGLMapViewDelegate, NonReusable
             if image == nil {
                 image = MGLAnnotationImage(image: UIImage(named: "placeholder")!, reuseIdentifier: avatarUrl.description)
 
-                avatarProvider.getAvatar(for: avatarUrl)
+                avatarProvider.getAvatar(for: avatarUrl, withSize: 60)
                         .done { img in
                             image?.image = img
                         }.catch {

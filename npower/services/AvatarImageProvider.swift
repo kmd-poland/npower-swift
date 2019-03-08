@@ -4,16 +4,16 @@ import UIKit
 import Kingfisher
 
 protocol AvatarImageProviderProtocol {
-    func getAvatar(for url: URL) -> Promise<UIImage>
+    func getAvatar(for url: URL, withSize: Int) -> Promise<UIImage>
 }
 class AvatarImageProvider: AvatarImageProviderProtocol {
 
     private let cache = NSCache<NSString, UIImage>()
 
-    func getAvatar(for url: URL) -> Promise<UIImage> {
+    func getAvatar(for url: URL, withSize: Int = 60) -> Promise<UIImage> {
         return  Promise<UIImage>{ seal in
-            let processor = DownsamplingImageProcessor(size: CGSize(width: 60, height: 60))
-                    >> RoundCornerImageProcessor(cornerRadius: 30, backgroundColor: .clear)
+            let processor = DownsamplingImageProcessor(size: CGSize(width: withSize, height: withSize))
+                    >> RoundCornerImageProcessor(cornerRadius: CGFloat(withSize/2), backgroundColor: .clear)
 
             
             KingfisherManager.shared.retrieveImage(

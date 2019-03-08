@@ -15,7 +15,7 @@ class MainCoordinator: Coordinator, LoginCoordinatorProtocol {
     let geoFencingService: GeoFencingProtocol!
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
-
+    
     init(navigationController: UINavigationController,
          container: DependencyContainer) {
         self.navigationController = navigationController
@@ -25,47 +25,52 @@ class MainCoordinator: Coordinator, LoginCoordinatorProtocol {
         self.geoFencingService = try! container.resolve() as GeoFencingProtocol
         self.geoFencingService.coordinator = self
     }
-
+    
     func start() {
         navigationController.setNavigationBarHidden(true, animated: false)
         if (!authenticationService.isUserLoggedIn()) {
             let vc = LoginViewController()
             vc.coordinator = self
             navigationController.pushViewController(vc, animated: false)
-
+            
         } else {
             showRoutePlan()
         }
     }
-
+    
     private func showRoutePlan() {
-
+        
         let viewModel = try! RoutePlanViewModel(routePlanProvider: container.resolve(), directions: Directions.shared, locationManager: CLLocationManager(), geofenceService: container.resolve())
-
+        
         let vc = try! RoutePlanViewController(container.resolve())
         _ = vc.view
-
-        let routePlanList = try! RoutePlanListViewController(container.resolve())
-
+        
+        let routePlanList = try! RoutePlanListViewController(container.resolve(), coordinator: self)
+        
         vc.viewModel = viewModel
         routePlanList.viewModel = viewModel
-
+        
         vc.panelController?.set(contentViewController: routePlanList)
         vc.panelController?.track(scrollView: routePlanList.tableView)
-
+        
         navigationController.pushViewController(vc, animated: false)
     }
     
-    private func showVisit(_ visit: Visit) {
-            print(visit.avatar ?? "unknown visit")
+    
+    func showVisit(_ visit: Visit) {
+        let viewModel = VisitViewModel(visit: visit, coordinatedBy: self)
+        let view = try! VisitViewController(provider: container.resolve())
+        view.viewModel = viewModel
+        navigationController.setNavigationBarHidden(false, animated: false)
+        navigationController.pushViewController(view, animated: false)
     }
-
+    
     func logIn() -> Promise<Void> {
         return authenticationService
-                .getAuthTokenWithWebLogin()
-                .done { [unowned self] _ in
-                    self.navigationController.viewControllers = []
-                    self.showRoutePlan()
-                }
+            .getAuthTokenWithWebLogin()
+            .done { [unowned self] _ in
+                self.navigationController.viewControllers = []
+                self.showRoutePlan()
+        }
     }
 }

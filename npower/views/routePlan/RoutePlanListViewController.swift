@@ -8,6 +8,7 @@ import Kingfisher
 class RoutePlanListViewController: UITableViewController, NonReusableViewModelOwner {
 
     private let avatarProvider: AvatarImageProviderProtocol
+    private weak var coordinator: MainCoordinator?
     
     private let timeFormatter: DateFormatter = {
         let df = DateFormatter()
@@ -18,7 +19,8 @@ class RoutePlanListViewController: UITableViewController, NonReusableViewModelOw
     private var visualEffectView: UIVisualEffectView?
     private var visits: [Visit]?
    
-    init(_ avatarProvider: AvatarImageProviderProtocol) {
+    init(_ avatarProvider: AvatarImageProviderProtocol, coordinator: MainCoordinator) {
+        self.coordinator = coordinator
         self.avatarProvider = avatarProvider
         super.init(style: .plain)
     }
@@ -38,7 +40,6 @@ class RoutePlanListViewController: UITableViewController, NonReusableViewModelOw
         self.visualEffectView = visualEffectView
     }
     func didSetViewModel(_ viewModel: RoutePlanViewModelProtocol, disposeBag: DisposeBag) {
-      
         viewModel
                 .visits
                 .observeOn(MainScheduler.instance)
@@ -67,7 +68,7 @@ class RoutePlanListViewController: UITableViewController, NonReusableViewModelOw
             visitCell.imageTag = avatarUrlString
             self
                 .avatarProvider
-                .getAvatar(for: avatarUrl)
+                .getAvatar(for: avatarUrl, withSize: 60)
                 .done{[unowned visitCell] img in
                     if visitCell.imageTag == avatarUrlString {
                         visitCell.avatarImageView.image = img
@@ -80,6 +81,12 @@ class RoutePlanListViewController: UITableViewController, NonReusableViewModelOw
         visitCell.backgroundColor = .clear
        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let visit = self.visits?[indexPath.row] {
+            self.coordinator?.showVisit(visit)
+        }
     }
 }
 
